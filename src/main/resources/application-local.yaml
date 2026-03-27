@@ -1,0 +1,13 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/reservation_db
+    username: reservation_user
+    password: reservation_pass
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: true
