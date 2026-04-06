@@ -6,9 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import personal.sunghun.meta_reservation_service.common.entity.BaseTimeEntity;
 
@@ -16,7 +14,6 @@ import personal.sunghun.meta_reservation_service.common.entity.BaseTimeEntity;
 @Table(name = "users")
 @Getter
 @Setter
-@AllArgsConstructor
 public class User extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,4 +27,14 @@ public class User extends BaseTimeEntity {
 
     @Column(name = "name", nullable = false, length = 100)
     private String name;
+
+    public User(String name, String email, String password) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+    }
+
+    public boolean isPasswordMatch(String password) {
+        return this.password.equals(password);
+    }
 }

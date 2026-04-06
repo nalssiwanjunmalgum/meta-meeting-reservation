@@ -15,7 +15,6 @@ import personal.sunghun.meta_reservation_service.common.entity.BaseTimeEntity;
 @Table(name = "resources")
 @Getter
 @Setter
-@RequiredArgsConstructor
 public class Resource extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,4 +31,11 @@ public class Resource extends BaseTimeEntity {
 
     @Column(name = "description", length = 500)
     private String description;
+
+    public Resource(String name, String location, Integer capacity, String description) {
+        this.name = name;
+        this.location = location;
+        this.capacity = capacity;
+        this.description = description;
+    }
 }
