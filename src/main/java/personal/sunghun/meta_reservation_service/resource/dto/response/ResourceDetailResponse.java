@@ -9,6 +9,6 @@ public class ResourceDetailResponse {
     private final Long id;
     private final String name;
     private final String location;
-    private final Integer capactiy;
-    private final String decription;
+    private final Integer capacity;
+    private final String description;
 }
